@@ -20,6 +20,6 @@ margin-bottom: 50px;}
 .serach-icon{border-left:1px solid;padding:4px 7px;font-size: 2rem!important;cursor: pointer; }
 .searchbar{border: 1px solid;display: inline-block;}
 .search-count{display: none;font-size: 3rem;}
-.item-name{font-size: 2.3rem;float: left;}
+.item-name{font-size: 2.3rem;}
 .searchItem{float: left;border: 1px solid #000;border-radius: 10px;padding: 5px;margin-bottom:10px;background: #ecf0f1;width: 100%}
-.icon-right{float: left;}
+
