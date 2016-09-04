@@ -71,6 +71,6 @@ $j(document).ready(function() {
     });
     //
 function searchItems(url,full_name,language,description) {
-  return "<div class='searchItem'><i class='fa fa-arrow-right icon-right ' aria-hidden='true'></i><div class='item-name'><a href='"+ url + "' target='_blank' title='Opens in a new Window' >" + full_name + "</a></div><div><span>Language: " + language + "</span>\t<span> | "  + description + "</span></div></div>";
+  return "<div class='searchItem'><div class='item-name'><i class='fa fa-arrow-right icon-right ' aria-hidden='true'></i><a href='"+ url + "' target='_blank' title='Opens in a new Window' >" + full_name + "</a></div><div><span>Language: " + language + "</span>\t<span> | "  + description + "</span></div></div>";
 }
 });
