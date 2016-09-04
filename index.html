@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search Git</title>
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./site.min.css">
+		<script src="https://use.fontawesome.com/d85894287b.js"></script>
+		<script type="text/javascript">
+			$j = jQuery.noConflict();
+		</script>
+	</head>
+	<body>
+		<div class="mainWrapper container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="HeaderWrapper">
+						<div class="logo"><i class="fa fa-github" aria-hidden="true"></i><span>Search GIT</span></div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="mainContent">
+					<h1 class="hide">TopGit</h1>
+						<div class="searchbar">
+							<input type="text" name="ghsearch" id="ghsearch" placeholder="Enter Language"><i id="ghsearchbtn" class="fa fa-search serach-icon" aria-hidden="true"></i>
+						</div>
+						<div class="search-count">We have found <span class="total-count"></span> repository</div>
+						<div id="ghapidata" class="clearfix"></div>
+						<div class="loader"></div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+			<script type="text/javascript" src="./site.min.js"></script>
+	</body>
+</html>
