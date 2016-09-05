@@ -1,4 +1,5 @@
 $j(document).ready(function() {
+    $j(".mainWrapper").outerHeight($j(Window).height());
   var currentpage;
   var maxpage;
   var search;
