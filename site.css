@@ -1,7 +1,8 @@
 html{font-size: 10px;line-height:10px;background: #abd9f5}
 body{font-size: 1rem;line-height:1;position: relative;}
-.logo{font-size: 15rem;text-align: center;}
-.logo span{font-size: 10rem;}
+.logo{font-size: 5rem;}
+.logo span{font-size: 3rem;}
+.logo-wrapper{text-align: center;}
 #morebtn{display: block;display: block;
 border: 1px solid #000;
 text-align: center;
