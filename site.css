@@ -24,7 +24,11 @@ margin-bottom: 50px;}
 .searchItem{float: left;border: 1px solid #000;border-radius: 10px;padding: 5px;margin-bottom:10px;background: #ecf0f1;width: 100%}
 .heart{color: red}
 .mainWrapper{padding-bottom:25px}
-.footer{position: absolute;bottom: 0;text-align: center;bottom: 0;
+.footer{position: absolute;bottom: 0;text-align: center;bottom: 0;background: #fff;
 left: 0;
-width: 100%;}
+width: 100%;
+font-size: 1.5rem;
+padding: 5px;
+}
+
 .headerWrapper{background: #fff;}

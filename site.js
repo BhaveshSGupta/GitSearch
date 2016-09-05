@@ -1,5 +1,6 @@
 $j(document).ready(function() {
-    $j(".mainWrapper").css('min-height',$j(Window).height()-2);
+      $j(".mainWrapper").css('min-height','');
+    $j(".mainWrapper").css('min-height',$j(Window).height()-1);
   var currentpage;
   var maxpage;
   var search;
@@ -75,3 +76,16 @@ function searchItems(url,full_name,language,description) {
   return "<div class='searchItem'><div class='item-name'><i class='fa fa-arrow-right icon-right ' aria-hidden='true'></i><a href='"+ url + "' target='_blank' title='Opens in a new Window' >" + full_name + "</a></div><div><span>Language: " + language + "</span>\t<span> | "  + description + "</span></div></div>";
 }
 });
+
+$j(window).load(function() {
+      $j(".mainWrapper").css('min-height','');
+  $j(".mainWrapper").css('min-height',$j(Window).height()-1);
+});
+$j(window).resize(function() {
+  $j(".mainWrapper").css('min-height','');
+  $j(".mainWrapper").css('min-height',$j(Window).height()-1);
+});
+
+window.onresize = function(event) {
+    alert();
+}
