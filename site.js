@@ -1,5 +1,5 @@
 $j(document).ready(function() {
-    $j(".mainWrapper").outerHeight($j(Window).height());
+    $j(".mainWrapper").css('min-height',$j(Window).height()-2);
   var currentpage;
   var maxpage;
   var search;
