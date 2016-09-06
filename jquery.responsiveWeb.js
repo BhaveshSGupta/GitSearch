@@ -215,8 +215,7 @@ $j(".mainWrapper").css('min-height','');
 
 $j(document).ready(function() {
 	    /*--------Equal height plugin starts-----------*/
-;
-(function($j) {
+;(function($j) {
     var defaults = {
         waitforimages: true,
         waitforfonts: false,
@@ -226,6 +225,7 @@ $j(document).ready(function() {
     $j.fn.getSameTopGroups = function(options, callback) {
         //var settings = {};
         if ($j(this).length < 1) {
+        	console.log("length "+length);
             return false;
         }
         var settings = $j.extend(true, {}, defaults, options);
@@ -319,40 +319,7 @@ $j(document).ready(function() {
     };
 })($j);
 
-function setEqualHeight_CommonClass(arr){
-    var x = new Array([]);
-    $j(arr).each(function(i) {
-        $j(this).height('auto');
-        x[i] = $j(this).outerHeight();
-    });
-    Max_Value = Array.max(x);
-    $j(arr).each(function(i) {
-        //if($j(arr[i]).height() != Max_Value)
-        //	{x[i] = $j(arr[i]).height(Max_Value);}
-        $j(this).outerHeight(Max_Value);
-    });
-}
 
-function setEqualHeight(arr) {
-    var x = new Array([]);
-    for (i = 0; i < arr.length; i++) {
-        x[i] = $j(arr[i]).height('auto');
-        x[i] = $j(arr[i]).outerHeight();
-    }
-    Max_Value = Array.max(x);
-    for (i = 0; i < arr.length; i++) {
-        //if($j(arr[i]).height() != Max_Value)
-        // {x[i] = $j(arr[i]).height(Max_Value);}
-        x[i] = $j(arr[i]).outerHeight(Max_Value);
-    }
-}
-Array.min = function(array) {
-    return Math.min.apply(Math, array);
-};
-
-Array.max = function(array) {
-    return Math.max.apply(Math, array);
-};
 /*--------Equal height plugin Ends-----------*/
 
 });

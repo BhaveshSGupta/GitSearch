@@ -36,12 +36,11 @@ Array.max = function(array) {
     return Math.max.apply(Math, array);
 };
         myObj = $j('.searchItem-wrapper').getSameTopGroups({
-            commonParent: '#ghapidata'
-        }, function(gc) {
+            commonParent: '.row'}, function(gc) {
             for(i = 1; i <= gc; i++) {
-                setEqualHeight_CommonClass('.gg-g-' + i + ".searchItem .item-name");
-                setEqualHeight_CommonClass('.gg-g-' + i + ".searchItem .item-content");
-                setEqualHeight_CommonClass('.gg-g-' + i + ".searchItem");
+                setEqualHeight_CommonClass('.gg-g-' + i + " .item-name");
+                setEqualHeight_CommonClass('.gg-g-' + i + " .item-content");
+                setEqualHeight_CommonClass('.gg-g-' + i + " .searchItem");
                
             }
         });
@@ -126,7 +125,7 @@ Array.max = function(array) {
     });
     //
     function searchItems(url, full_name, language, description) {
-        return "<div class='col-md-2 searchItem-wrapper'><div class='searchItem'><div class='item-name'><a href='" + url + "' target='_blank' title='Opens in a new Window' >" + full_name + "</a></div><div class='item-content'><span>Language: " + language + "</span>\t<span> | " + description + "</span></div></div></div>";
+        return "<div class='col-md-3 searchItem-wrapper'><div class='searchItem'><div class='item-name'><a href='" + url + "' target='_blank' title='Opens in a new Window' >" + full_name + "</a></div><div class='item-content'><div>Language: " + language + "</div><div> " + description + "</div></div></div></div>";
     }
 });
 
