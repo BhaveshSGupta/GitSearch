@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<title>Search Git</title>
-		<script type="text/javascript" src="./jquery.js"></script>
+		<!-- <script type="text/javascript" src="./jquery.js"></script> -->
+		  <script type="text/javascript" language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<link rel="stylesheet" href="./bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="./site.css">
 		<script src="https://use.fontawesome.com/d85894287b.js"></script>
@@ -25,10 +26,10 @@
 							<input type="text" name="ghsearch" id="ghsearch" placeholder="Enter Language"><i id="ghsearchbtn" class="fa fa-search serach-icon" aria-hidden="true"></i>
 						</div>
 						<div class="search-count">We have found <span class="total-count"></span> repository</div>
-						<div id="ghapidata" class="clearfix"></div>
-						<div class="loader"></div>
 					</div>
 				</div>
+				<div id="ghapidata" class="clearfix ghapidata"></div>
+						<div class="loader"></div>
 			</div>
 			
 		</div>

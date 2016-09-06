@@ -211,3 +211,148 @@ function rearrangeObjects() {
 $j(".mainWrapper").css('min-height','');
   $j(".mainWrapper").css('min-height',$j(Window).height()-1);
 }
+
+
+$j(document).ready(function() {
+	    /*--------Equal height plugin starts-----------*/
+;
+(function($j) {
+    var defaults = {
+        waitforimages: true,
+        waitforfonts: false,
+        areSiblings: true,
+        commonParent: ''
+    }; // default settings
+    $j.fn.getSameTopGroups = function(options, callback) {
+        //var settings = {};
+        if ($j(this).length < 1) {
+            return false;
+        }
+        var settings = $j.extend(true, {}, defaults, options);
+        var $jelement = $j(this);
+        //$jelement['settings'] = $j.extend(true, {}, defaults, options)
+        var winEvents = false;
+        var totElements = 0;
+        var reload = function(isInit, $jelementObj, groupCounter) {
+            var parentWidth;
+            if ($j(settings.commonParent).length > 0) {
+                if (settings.commonParent === '') {
+                    parentWidth = getStyle($jelement.first().parent()[0], 'width');
+                } else {
+                    parentWidth = getStyle($jelement.first().closest(settings.commonParent)[0], 'width');
+                }
+            } else {
+                return false;
+            }
+            if (isInit) {
+                totElements = $jelement.length;
+                $jelement.removeClass('gg-taken');
+                $jelement.removeClass(function(index, css) {
+                    return (css.match(/\bgg-g-\S+/g) || []).join(' ');
+                });
+                $jelementObj = $jelement.first();
+                var groupCounter = 1;
+                var childWidth = getOuterWidthWithMargin($jelementObj, true);
+                $jelementObj.addClass('gg-taken gg-g-' + groupCounter);
+                --totElements;
+                if (totElements === 0) {
+                    callback(groupCounter);
+                }
+            } else {
+                --totElements;
+                childWidth = getOuterWidthWithMargin($jelementObj, true);
+                $jelementObj.addClass('gg-taken gg-g-' + groupCounter);
+                if (totElements === 0) {
+                    callback(groupCounter);
+                }
+            }
+            $jelement.not('.gg-taken').each(function(index) {
+                childWidth = childWidth + getOuterWidthWithMargin($j(this), true);
+                if (Math.floor(childWidth) > Math.floor(parentWidth)) {
+                    childWidth = childWidth - getOuterWidthWithMargin($j(this), true);
+                    ++groupCounter;
+                    reload(false, $j(this), groupCounter);
+                    return false;
+                } else {
+                    $j(this).addClass('gg-taken gg-g-' + groupCounter);
+                    --totElements;
+                }
+                if (totElements === 0) {
+                    callback(groupCounter);
+                }
+            });
+        };
+        var timeOut;
+        var resFun = function() {
+            clearTimeout(timeOut);
+            timeOut = setTimeout(function() {
+                reload(true);
+            }, 300);
+        };
+        $jelement.reGroup = function() {
+            $jelement = $j($jelement['selector']);
+            reload(true);
+        };
+        $j(window).bind('load', function() {
+            reload(true);
+        });
+        $j(document).bind('ajaxComplete', function() {
+            $jelement = $j($jelement['selector']);
+            $j('.hometwitter').height('auto');
+            reload(true);
+        });
+        $j(window).bind('resize', resFun);
+        return $jelement;
+    };
+    var getStyle = function(el, prop) {
+        if (getComputedStyle !== 'undefined') {
+            return parseFloat(getComputedStyle(el, null).getPropertyValue(prop));
+        } else {
+            return parseFloat(el.currentStyle[prop]);
+        }
+    };
+    var getOuterWidthWithMargin = function(el, isBorderBox) {
+        if (!isBorderBox)
+            return getStyle(el[0], 'margin-left') + getStyle(el[0], 'margin-right') + getStyle(el[0], 'padding-left') + getStyle(el[0], 'padding-right') + getStyle(el[0], 'width');
+        else
+            return getStyle(el[0], 'margin-left') + getStyle(el[0], 'margin-right') + getStyle(el[0], 'width');
+    };
+})($j);
+
+function setEqualHeight_CommonClass(arr){
+    var x = new Array([]);
+    $j(arr).each(function(i) {
+        $j(this).height('auto');
+        x[i] = $j(this).outerHeight();
+    });
+    Max_Value = Array.max(x);
+    $j(arr).each(function(i) {
+        //if($j(arr[i]).height() != Max_Value)
+        //	{x[i] = $j(arr[i]).height(Max_Value);}
+        $j(this).outerHeight(Max_Value);
+    });
+}
+
+function setEqualHeight(arr) {
+    var x = new Array([]);
+    for (i = 0; i < arr.length; i++) {
+        x[i] = $j(arr[i]).height('auto');
+        x[i] = $j(arr[i]).outerHeight();
+    }
+    Max_Value = Array.max(x);
+    for (i = 0; i < arr.length; i++) {
+        //if($j(arr[i]).height() != Max_Value)
+        // {x[i] = $j(arr[i]).height(Max_Value);}
+        x[i] = $j(arr[i]).outerHeight(Max_Value);
+    }
+}
+Array.min = function(array) {
+    return Math.min.apply(Math, array);
+};
+
+Array.max = function(array) {
+    return Math.max.apply(Math, array);
+};
+/*--------Equal height plugin Ends-----------*/
+
+});
