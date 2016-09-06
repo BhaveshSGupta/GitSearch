@@ -49,7 +49,7 @@ Array.max = function(array) {
 
     /*------------- Set equal height function Ends -------------- */
     $j(".mainWrapper").css('min-height', '');
-    $j(".mainWrapper").css('min-height', $j(Window).height() - 1);
+    $j(".mainWrapper").css('min-height', $j(window).height() - 1);
     var currentpage;
     var maxpage;
     var search;
@@ -131,9 +131,9 @@ Array.max = function(array) {
 
 $j(window).load(function() {
     $j(".mainWrapper").css('min-height', '');
-    $j(".mainWrapper").css('min-height', $j(Window).height() - 1);
+    $j(".mainWrapper").css('min-height', $j(window).height() - 1);
 });
 $j(window).resize(function() {
     $j(".mainWrapper").css('min-height', '');
-    $j(".mainWrapper").css('min-height', $j(Window).height() - 1);
+    $j(".mainWrapper").css('min-height', $j(window).height() - 1);
 });

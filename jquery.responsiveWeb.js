@@ -209,7 +209,7 @@ function manipulateDesign() {}
 function rearrangeObjects() {
 
 $j(".mainWrapper").css('min-height','');
-  $j(".mainWrapper").css('min-height',$j(Window).height()-1);
+  $j(".mainWrapper").css('min-height',$j(window).height()-1);
 }
 
 
