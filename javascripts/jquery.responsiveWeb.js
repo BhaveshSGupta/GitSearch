@@ -225,7 +225,7 @@ $j(document).ready(function() {
     $j.fn.getSameTopGroups = function(options, callback) {
         //var settings = {};
         if ($j(this).length < 1) {
-        	console.log("length "+length);
+        	//console.log("length "+length);
             return false;
         }
         var settings = $j.extend(true, {}, defaults, options);
